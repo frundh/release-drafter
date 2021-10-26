@@ -93,7 +93,7 @@ module.exports = (app, { getRouter }) => {
         // check pr body
         if (!found && autolabel.body != null && autolabel.body.length > 0) {
           for (const matcher of autolabel.body) {
-            if (context.payload.pull_request.body.match(matcher)) {
+            if (context.payload.pull_request.body != null && context.payload.pull_request.body.match(matcher)) {
               labels.add(autolabel.label)
               found = true
               log({
