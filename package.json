@@ -6,7 +6,7 @@
   "license": "ISC",
   "repository": "https://github.com/toolmantim/release-drafter",
   "scripts": {
-    "build": "ncc build action.js",
+    "build": "yarn install && ncc build action.js",
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./index.js",
     "test": "jest",
